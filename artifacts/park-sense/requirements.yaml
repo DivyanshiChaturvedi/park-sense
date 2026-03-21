@@ -1,0 +1,17 @@
+packages:
+  "qrcode.react": "Generating QR code tickets for bookings"
+  "date-fns": "Formatting dates and times"
+  "recharts": "Admin dashboard analytics and statistics"
+  "@hookform/resolvers": "Zod validation for forms"
+  "framer-motion": "Smooth page transitions and component reveals"
+
+images:
+  - path: "artifacts/park-sense/public/images/hero-bg.png"
+    description: "Abstract modern geometric background in deep navy blue and vibrant cyan with subtle glowing light effects and technical grid lines, representing a smart city network"
+    aspect_ratio: "16:9"
+  - path: "artifacts/park-sense/public/images/auth-bg.png"
+    description: "Minimalist dark navy architectural parking structure concept, dramatic cinematic lighting, clean lines, professional"
+    aspect_ratio: "9:16"
+
+notes:
+  - Assumes customFetch in @workspace/api-client-react handles the Authorization header (or uses cookies). The frontend will still store the token in localStorage as requested.

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { MapPin, Search, Star, Clock, Filter, AlertCircle, ArrowRight } from "lucide-react";
 import { useListParkingLots } from "@workspace/api-client-react";
+import { formatPrice, formatPricePerHour } from "@/lib/currency";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -99,7 +100,7 @@ export default function FindParking() {
                   )}
                 </div>
                 <div className="absolute bottom-4 right-4 bg-background/90 backdrop-blur text-foreground px-3 py-1.5 rounded-lg font-bold shadow-lg text-sm border border-border/50">
-                  ${lot.pricePerHour}<span className="text-muted-foreground font-medium text-xs">/hr</span>
+                  {formatPricePerHour(lot.pricePerHour, lot.city)}
                 </div>
               </div>
 

@@ -17,6 +17,7 @@ import {
 import { useAuth } from "@/lib/auth-context";
 import { useToast } from "@/hooks/use-toast";
 
+import { formatPrice, formatPricePerHour } from "@/lib/currency";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -155,7 +156,7 @@ export default function LotDetail() {
           </div>
           
           <div className="bg-background/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 text-white text-center min-w-[120px]">
-            <div className="text-3xl font-display font-bold">${lot.pricePerHour}</div>
+            <div className="text-3xl font-display font-bold">{formatPrice(lot.pricePerHour, lot.city)}</div>
             <div className="text-slate-300 text-sm uppercase tracking-wider font-semibold">Per Hour</div>
           </div>
         </div>
@@ -379,7 +380,7 @@ export default function LotDetail() {
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Rate</span>
-                    <span className="font-medium">${lot.pricePerHour.toFixed(2)} / hr</span>
+                    <span className="font-medium">{formatPricePerHour(lot.pricePerHour, lot.city)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Duration</span>
@@ -387,7 +388,7 @@ export default function LotDetail() {
                   </div>
                   <div className="flex justify-between text-lg font-bold pt-3 border-t border-border">
                     <span>Total Amount</span>
-                    <span className="text-primary">${totalPrice.toFixed(2)}</span>
+                    <span className="text-primary">{formatPrice(totalPrice, lot.city)}</span>
                   </div>
                 </div>
 

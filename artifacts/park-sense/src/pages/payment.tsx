@@ -12,6 +12,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { useQueryClient } from "@tanstack/react-query";
 
+import { formatPrice } from "@/lib/currency";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -157,7 +158,7 @@ export default function Payment() {
                 disabled={paymentMutation.isPending}
               >
                 {paymentMutation.isPending ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : null}
-                Pay ${booking.totalAmount.toFixed(2)} Securely
+                Pay {formatPrice(booking.totalAmount)} Securely
               </Button>
 
               <div className="flex items-center justify-center text-sm text-muted-foreground mt-4">
@@ -189,18 +190,18 @@ export default function Payment() {
               
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Parking Fee</span>
-                <span className="font-medium">${booking.totalAmount.toFixed(2)}</span>
+                <span className="font-medium">{formatPrice(booking.totalAmount)}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Taxes & Fees</span>
-                <span className="font-medium">$0.00</span>
+                <span className="font-medium">₹0.00</span>
               </div>
               
               <Separator className="my-2" />
               
               <div className="flex justify-between items-end pt-2">
                 <span className="text-base font-bold">Total to Pay</span>
-                <span className="text-2xl font-bold text-primary font-display">${booking.totalAmount.toFixed(2)}</span>
+                <span className="text-2xl font-bold text-primary font-display">{formatPrice(booking.totalAmount)}</span>
               </div>
             </CardContent>
           </Card>

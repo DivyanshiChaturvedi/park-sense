@@ -1,4 +1,5 @@
 import { BarChart3, TrendingUp, Users, Car, Ticket, Loader2 } from "lucide-react";
+import { formatPrice } from "@/lib/currency";
 import { useGetAdminStats, useListAllBookings } from "@workspace/api-client-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -44,7 +45,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <StatCard 
           title="Total Revenue" 
-          value={`$${stats.totalRevenue.toLocaleString()}`} 
+          value={formatPrice(stats.totalRevenue)} 
           icon={BarChart3} 
           trend="+12%" 
           colorClass="bg-emerald-500/10 text-emerald-600"
@@ -108,7 +109,7 @@ export default function AdminDashboard() {
                             {booking.status}
                           </Badge>
                         </TableCell>
-                        <TableCell className="text-right font-medium">${booking.totalAmount.toFixed(2)}</TableCell>
+                        <TableCell className="text-right font-medium">{formatPrice(booking.totalAmount)}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

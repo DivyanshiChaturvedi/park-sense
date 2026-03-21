@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { format } from "date-fns";
+import { formatPrice } from "@/lib/currency";
 import { 
   Ticket, MapPin, Calendar, Clock, CreditCard, 
   XCircle, QrCode, ArrowRight, Loader2
@@ -81,7 +82,7 @@ export default function MyBookings() {
             <h3 className="font-display font-bold text-xl mt-2 line-clamp-1">{booking.lotName}</h3>
           </div>
           <div className="text-right">
-            <div className="text-2xl font-bold text-primary">${booking.totalAmount.toFixed(2)}</div>
+            <div className="text-2xl font-bold text-primary">{formatPrice(booking.totalAmount)}</div>
             <div className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Total</div>
           </div>
         </div>

@@ -12,7 +12,11 @@ router.get("/", async (req, res) => {
   const conditions: any[] = [];
 
   if (search) {
-    conditions.push(or(ilike(parkingLotsTable.name, `%${search}%`), ilike(parkingLotsTable.address, `%${search}%`)));
+    conditions.push(or(
+      ilike(parkingLotsTable.name, `%${search}%`),
+      ilike(parkingLotsTable.address, `%${search}%`),
+      ilike(parkingLotsTable.city, `%${search}%`)
+    ));
   }
   if (city) {
     conditions.push(ilike(parkingLotsTable.city, `%${city}%`));

@@ -62,7 +62,7 @@ router.get("/:lotId", async (req, res) => {
   res.json({
     ...lot,
     availableSlots: slots.filter(s => s.isAvailable).length,
-    rating: reviewStats[0]?.avg ? parseFloat(reviewStats[0].avg.toFixed(1)) : null,
+    rating: reviewStats[0]?.avg ? parseFloat(parseFloat(reviewStats[0].avg.toString()).toFixed(1)) : null,
     reviewCount: parseInt(reviewStats[0]?.count?.toString() || "0"),
     slots: slots.map(s => ({
       id: s.id,

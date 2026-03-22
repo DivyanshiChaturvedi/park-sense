@@ -16,7 +16,13 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 
-const CITIES = ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Pune", "Kolkata"];
+const CITIES = [
+  "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai",
+  "Pune", "Kolkata", "Jaipur", "Ahmedabad", "Chandigarh",
+  "Lucknow", "Kochi", "Nagpur", "Indore", "Amritsar",
+  "Guwahati", "Bhopal", "Visakhapatnam", "Surat", "Varanasi",
+  "Coimbatore", "Vijayawada",
+];
 
 export default function FindParking() {
   const [search, setSearch] = useState("");

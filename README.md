@@ -1,7 +1,6 @@
 # ParkSense – Smart Parking Management System
 
-A full-stack smart parking management system built with React, Express 5, PostgreSQL, and Drizzle ORM. ParkSense lets users discover parking lots across Indian cities, book slots in real time, pay online, and receive QR-coded tickets — all from a polished, responsive web app.
-
+> Full-stack parking management system · React + Express 5 + PostgreSQL + Drizzle ORM · JWT Auth · Real-time slot tracking · QR ticket generation · Role-based admin dashboard
 ---
 
 ## Features
